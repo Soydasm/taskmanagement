@@ -24,6 +24,8 @@ public class IssueResponse extends BaseResponse
             for (Issue issue : issueList)
             {
                 IssueDTO issueDTO = new IssueDTO();
+                issueDTO.setCreateUser(issue.getCreateUser());
+                issueDTO.setCreatedTime(issue.getCreatedTime());
                 issueDTO.setTitle(issue.getTitle());
                 issueDTO.setDescription(issue.getDescription());
                 issueDTO.setDeveloperName(issue.getDeveloper() != null ? issue.getDeveloper().getUsername() : null);

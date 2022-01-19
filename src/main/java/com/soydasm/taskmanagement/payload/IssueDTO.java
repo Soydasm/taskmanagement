@@ -44,6 +44,8 @@ public class IssueDTO extends BaseDTO
     {
         setId(issue.getId());
         setVersion(issue.getVersion());
+        setCreatedTime(issue.getCreatedTime());
+        setCreateUser(issue.getCreateUser());
         if(issue instanceof Story)
         {
             this.status = ((Story) issue).getStatus().getName();

@@ -21,9 +21,10 @@ import java.util.Set;
 @Where(clause = "DELETED = '0'")
 public class UserRole extends BaseEntity
 {
+    @Column(unique=true)
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "T_USER_ROLE_ROLE",
             joinColumns = {@JoinColumn(name = "USER_ROLE_ID", referencedColumnName = "ID")},
             inverseJoinColumns = {@JoinColumn(name = "ROLE_ID", referencedColumnName = "ID")})

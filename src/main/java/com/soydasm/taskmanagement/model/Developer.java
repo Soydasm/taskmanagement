@@ -17,6 +17,6 @@ import java.util.Set;
 public class Developer extends User
 {
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "developer")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "developer")
     private Set<Issue> issues = new HashSet<>();
 }

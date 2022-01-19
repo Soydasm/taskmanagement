@@ -22,6 +22,6 @@ public class EndPoint extends BaseEntity
 
     private String suffix;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "endPoint")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "endPoint")
     private Set<Grant> grants = new HashSet<>();
 }
